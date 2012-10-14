@@ -12,7 +12,7 @@
      (slurp (:body request)))))
 
 (defroutes base-handler
-  (PUT [":path/:filename" :path #".*" :filename #".*\.js"]
+  (PUT [":path/:filename" :path #".*" :filename #".*\.(js|st)"]
       [path filename :as request]
     (put-file request path filename))
 
