@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amber Knockout Example</title>
+    <script src="/js/lib/knockout-2.1.0.min.js" type="text/javascript"></script>
+    <script src="/js/amber.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      loadAmber({
+        files: ["KO.js"],
+        prefix: 'projects/knockout/js',
+        ready: function() {
+          alert("Oeuoeu");
+          smalltalk.Browser._open();
+        }}); 
+    </script>
+  </head>
+  <body onload='ko.applyBindings(smalltalk.Tut1._new())'>
+    <article>
+      <h1>Amber Knockout Example</h1>
+      <button onclick="smalltalk.Browser._open()">class browser</button>
+      <button data-bind="click: _buttonClick">Tom</button>
+      <button data-bind="click: _buttonClick1">Dick</button>
+      <button data-bind="click: _buttonClick2">Harry</button>
+      <button data-bind="click: _buttonClick3">Bert</button>
+      <p>First name: <strong data-bind="text: $root['@firstName']"></strong></p>
+      <p>Last name: <strong data-bind="text: $root['@lastName']"></strong></p>
+
+      <p>First name: <input data-bind="value: $root['@firstName']" /></p>
+      <p>Last name: <input data-bind="value: $root['@lastName']" /></p>
+    </article>
+  </body>
+</html>
